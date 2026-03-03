@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ProductController {
 
-    private final ProductService service = new ProductService();
+    private final ProductService service = ProductService.getInstance();
 
     // Сохранить продукт в базе данных (при сохранении продукт автоматически считается активным).
     public Product save(String title, String price) {
