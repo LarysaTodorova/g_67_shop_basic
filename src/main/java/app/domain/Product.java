@@ -17,8 +17,24 @@ public class Product {
         this.id = id;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     @Override
