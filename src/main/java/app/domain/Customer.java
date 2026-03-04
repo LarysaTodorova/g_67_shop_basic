@@ -11,6 +11,7 @@ public class Customer {
     private List<Product> cart = new ArrayList<>();
 
     public Customer(String name) {
+        this.name = name;
     }
 
     public void setId(Long id) {
