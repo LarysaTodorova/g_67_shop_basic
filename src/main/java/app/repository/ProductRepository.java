@@ -8,19 +8,24 @@ import java.util.List;
 
 public class ProductRepository {
 
+    // Имитация базы данных
     private final List<Product> database = new ArrayList<>();
+    // Поле, которое учитывает, какой сейчас максимальный ID продукта в базе данных
     private long maxId;
 
+    // Метод, который сохраняет новый продукт в базе данных (Create)
     public Product save(Product product) {
         product.setId(++maxId);
         database.add(product);
         return product;
     }
 
+    // Метод, который возвращает все продукты из базы данных (Read)
     public List<Product> findAll() {
         return database;
     }
 
+    // Метод, который возвращает один конкретный продукт по идентификатору (Read)
     public Product findById(long id) {
         for (Product product : database) {
             if (product.getId().equals(id)) {
@@ -30,6 +35,7 @@ public class ProductRepository {
         return null;
     }
 
+    // Метод, который изменяет цену существующего продукта в базе данных (Update)
     public void update(Long id, double newPrice) {
         for (Product product : database) {
             if (product.getId().equals(id)) {
@@ -47,6 +53,7 @@ public class ProductRepository {
         }
     }
 
+    // Метод, который удаляет продукт из базы данных (Delete)
     public void deleteById(Long id) {
         Iterator<Product> iterator = database.iterator();
         while (iterator.hasNext()) {
